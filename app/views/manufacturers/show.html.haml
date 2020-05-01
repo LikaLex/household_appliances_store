@@ -1,12 +1,18 @@
 .row
   .col-md-12
 
-    %h3
-      = @manufacturer.name
-
-    %h4
-      = @manufacturer.place
+    .action-bar
+      = link_to 'Edit ', edit_manufacturer_path(@manufacturer), class: "btn btn-primary pull-right"
 
 
-    %h4
-      = @manufacturer.date_of_foundation
+  .col-md-12
+    %dl.dl-horizontal
+      %dt Name
+      %dd= @manufacturer.name
+      %dt Place
+      %dd= @manufacturer.place
+      %dt Date of foundation
+      %dd= @manufacturer.date_of_foundation
+
+
+= link_to 'Back', :back, class: "btn btn-default "

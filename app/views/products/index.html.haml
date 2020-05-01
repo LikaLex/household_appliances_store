@@ -1,0 +1,40 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Add Product', new_product_path, class: "btn btn-default pull-right"
+
+    %h3.pull-left.text-primary Products
+
+.row
+  .col-md-12
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Manufacturer
+          %th Name
+          %th Kind
+          %th Date of issue
+          %th Price
+          %th Guarantee period
+          %th Number
+          %th Specific characteristic
+          %th Value
+          %th
+
+      %tbody
+        - @products.each do |product|
+          %tr
+            %td= product.manufacturer.try(:name)
+            %td= product.name
+            %td= product.kind
+            %td= product.date_of_issue
+            %td= product.price
+            %td= "#{product.guarantee_period} months"
+            %td= product.number
+            %td= product.specific_characteristic
+            %td= product.specific_characteristic_value
+            %td.nowrap
+              = edit_button edit_product_path(product)
+              = show_button product_path(product)
+              = delete_button product_path(product)

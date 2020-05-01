@@ -1,0 +1,27 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Edit ', edit_product_path(@product), class: "btn btn-primary pull-right"
+
+
+  .col-md-12
+    %dl.dl-horizontal
+      %dt Name
+      %dd= @product.name
+      %dt Manufacturer
+      %dd= @product.manufacturer.try(:name)
+      %dt Kind
+      %dd= @product.kind
+      %dt Date of issue
+      %dd= @product.date_of_issue
+      %dt Price
+      %dd= @product.price
+      %dt Guarantee period
+      %dd= "#{@product.guarantee_period} months"
+      %dt Number
+      %dd= @product.number
+      %dt= @product.specific_characteristic
+      %dd= @product.specific_characteristic_value
+
+= link_to 'Back', :back, class: "btn btn-default "
