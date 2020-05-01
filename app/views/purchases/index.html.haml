@@ -1,0 +1,26 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Add Purchase', new_purchase_path, class: "btn btn-default pull-right"
+
+    %h3.pull-left.text-primary Purchases
+
+.row
+  .col-md-12
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Store
+          %th Number
+          %th
+
+      %tbody
+        - @purchases.each do |purchase|
+          %tr
+            %td= purchase.store.try(:name)
+            %td= purchase.id
+            %td.nowrap
+              = edit_button edit_purchase_path(purchase)
+              = show_button purchase_path(purchase)
+              = delete_button purchase_path(purchase)

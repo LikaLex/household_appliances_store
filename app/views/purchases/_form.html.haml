@@ -1,0 +1,8 @@
+= simple_form_for(@purchase) do |f|
+  = f.association :store, include_blank: false, collection:  Store.all.order(:name).collect{|s| [s.name, s.id]}, input_html: { class: "chosen" }
+  = f.association :buyer, include_blank: false, collection:  Buyer.all.order(:first_name).collect{|s| [s.name, s.id]}, input_html: { class: "chosen" }
+  = f.association :seller, include_blank: false, collection:  Seller.all.order(:first_name).collect{|s| [s.name, s.id]}, input_html: { class: "chosen" }
+  = f.association :product, include_blank: false, collection:  Product.all.order(:name).collect{|s| [s.name, s.id]}, input_html: { class: "chosen" }
+
+  %hr
+    = f.button :submit, class: 'btn btn-primary'

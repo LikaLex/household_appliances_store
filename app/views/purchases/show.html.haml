@@ -1,0 +1,19 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Edit ', edit_purchase_path(@purchase), class: "btn btn-primary pull-right"
+
+
+  .col-md-12
+    %dl.dl-horizontal
+      %dt Buyer
+      %dd= "#{@purchase.buyer.try(:first_name)} #{@purchase.buyer.try(:last_name)}"
+      %dt Seller
+      %dd= "#{@purchase.seller.try(:first_name)} #{@purchase.seller.try(:last_name)}"
+      %dt Product
+      %dd= @purchase.product.try(:name)
+      %dt Store
+      %dd= @purchase.store.try(:name)
+
+= link_to 'Back', :back, class: "btn btn-default "

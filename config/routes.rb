@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :storages
   resources :commodity_units
   resources :buyers
+  resources :purchases
 
   root "manufacturers#index"
 end
