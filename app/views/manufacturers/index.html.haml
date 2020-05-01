@@ -1,0 +1,26 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Add Manufacturer', new_manufacturer_path, class: "btn btn-default pull-right"
+
+    %h3.pull-left.text-primary Manufacturers
+
+
+.row
+  .col-md-6
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th
+          %th
+
+      %tbody
+        - @manufacturers.each do |manufacturer|
+          %tr
+            %td
+              = manufacturer.name
+            %td.nowrap
+              = edit_button edit_manufacturer_path(manufacturer)
+              = show_button manufacturer_path(manufacturer)
+              = delete_button manufacturer_path(manufacturer)

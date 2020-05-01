@@ -1,0 +1,8 @@
+- title "New"
+.row
+  .col-md-12
+    = @title
+
+    = render 'form'
+    %br/
+    = link_to 'Back', manufacturers_path, class: 'btn btn-default'

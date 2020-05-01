@@ -1,0 +1,6 @@
+= simple_form_for(@manufacturer) do |f|
+  = f.input :name
+  = f.input :place
+  = f.input :date_of_foundation, as: :date
+  %hr
+  = f.button :submit, class: 'btn btn-primary'
