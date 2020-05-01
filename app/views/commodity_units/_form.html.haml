@@ -1,0 +1,7 @@
+= simple_form_for(@commodity_unit) do |f|
+  = f.input :count
+  = f.association :storage, include_blank: false, collection:  Store.all.order(:name).collect{|s| [s.name, s.id]}, input_html: { class: "chosen" }
+  = f.association :product, include_blank: false, collection:  Product.all.order(:name).collect{|s| [s.name, s.id]}, input_html: { class: "chosen" }
+
+  %hr
+    = f.button :submit, class: 'btn btn-primary'

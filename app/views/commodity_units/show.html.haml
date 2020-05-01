@@ -1,0 +1,17 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Edit ', edit_commodity_unit_path(@commodity_unit), class: "btn btn-primary pull-right"
+
+
+  .col-md-12
+    %dl.dl-horizontal
+      %dt Product
+      %dd= @commodity_unit.product.try(:name)
+      %dt Count
+      %dd= @commodity_unit.count
+      %dt Store
+      %dd= @commodity_unit.storage.try(:name)
+
+= link_to 'Back', :back, class: "btn btn-default "

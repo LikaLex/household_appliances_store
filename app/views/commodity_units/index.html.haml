@@ -1,0 +1,29 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Add Commodity Unit', new_commodity_unit_path, class: "btn btn-default pull-right"
+
+    %h3.pull-left.text-primary Commodity Units
+
+.row
+  .col-md-12
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Product
+          %th Storage
+          %th Count
+          %th
+
+      %tbody
+        - @commodity_units.each do |commodity_unit|
+          %tr
+            %td= commodity_unit.product.try(:name)
+            %td= commodity_unit.storage.try(:name)
+            %td= commodity_unit.count
+
+            %td.nowrap
+              = edit_button edit_commodity_unit_path(commodity_unit)
+              = show_button commodity_unit_path(commodity_unit)
+              = delete_button commodity_unit_path(commodity_unit)

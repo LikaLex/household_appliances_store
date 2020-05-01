@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_01_144955) do
+ActiveRecord::Schema.define(version: 2020_05_01_151944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "commodity_units", force: :cascade do |t|
+    t.integer "count"
+    t.bigint "storage_id"
+    t.bigint "product_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_commodity_units_on_product_id"
+    t.index ["storage_id"], name: "index_commodity_units_on_storage_id"
+  end
 
   create_table "manufacturers", force: :cascade do |t|
     t.string "name"
