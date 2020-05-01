@@ -1,0 +1,17 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Edit ', edit_seller_path(@seller), class: "btn btn-primary pull-right"
+
+
+  .col-md-12
+    %dl.dl-horizontal
+      %dt Name
+      %dd= "#{@seller.first_name} #{@seller.last_name}"
+      %dt Contract number
+      %dd= @seller.employment_contract_number
+      %dt Store
+      %dd= @seller.store.try(:name)
+
+= link_to 'Back', :back, class: "btn btn-default "

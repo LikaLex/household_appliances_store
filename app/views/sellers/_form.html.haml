@@ -1,0 +1,8 @@
+= simple_form_for(@seller) do |f|
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :employment_contract_number
+  = f.association :store, include_blank: false, collection:  Store.all.order(:name).collect{|s| [s.name, s.id]}, input_html: { class: "chosen" }
+
+  %hr
+    = f.button :submit, class: 'btn btn-primary'

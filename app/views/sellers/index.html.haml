@@ -1,0 +1,26 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Add Seller', new_seller_path, class: "btn btn-default pull-right"
+
+    %h3.pull-left.text-primary Sellers
+
+.row
+  .col-md-12
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Name
+          %th Store
+          %th
+
+      %tbody
+        - @sellers.each do |seller|
+          %tr
+            %td= "#{seller.first_name}  #{seller.last_name}"
+            %td= seller.store.try(:name)
+            %td.nowrap
+              = edit_button edit_seller_path(seller)
+              = show_button seller_path(seller)
+              = delete_button seller_path(seller)
