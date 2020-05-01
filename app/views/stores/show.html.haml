@@ -1,0 +1,19 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Edit ', edit_store_path(@store), class: "btn btn-primary pull-right"
+
+
+  .col-md-12
+    %dl.dl-horizontal
+      %dt Name
+      %dd= @store.name
+      %dt Town
+      %dd= @store.town
+      %dt Street
+      %dd= @store.street
+      %dt House
+      %dd= @store.house
+
+= link_to 'Back', :back, class: "btn btn-default "

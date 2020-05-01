@@ -1,0 +1,8 @@
+= simple_form_for(@store) do |f|
+  = f.input :name
+  = f.input :town
+  = f.input :street
+  = f.input :house
+
+  %hr
+    = f.button :submit, class: 'btn btn-primary'

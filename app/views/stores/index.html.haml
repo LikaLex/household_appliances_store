@@ -1,0 +1,30 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Add Store', new_store_path, class: "btn btn-default pull-right"
+
+    %h3.pull-left.text-primary Stores
+
+.row
+  .col-md-12
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Name
+          %th Town
+          %th Street
+          %th House
+          %th
+
+      %tbody
+        - @stores.each do |store|
+          %tr
+            %td= store.name
+            %td= store.town
+            %td= store.street
+            %td= store.house
+            %td.nowrap
+              = edit_button edit_store_path(store)
+              = show_button store_path(store)
+              = delete_button store_path(store)
