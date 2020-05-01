@@ -1,0 +1,17 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Edit ', edit_storage_path(@storage), class: "btn btn-primary pull-right"
+
+
+  .col-md-12
+    %dl.dl-horizontal
+      %dt Name
+      %dd= @storage.name
+      %dt Number
+      %dd= @storage.number
+      %dt Store
+      %dd= @storage.store.try(:name)
+
+= link_to 'Back', :back, class: "btn btn-default "

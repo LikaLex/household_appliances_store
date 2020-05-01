@@ -1,0 +1,26 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Add Storage', new_storage_path, class: "btn btn-default pull-right"
+
+    %h3.pull-left.text-primary Storages
+
+.row
+  .col-md-12
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Store
+          %th Name
+          %th
+
+      %tbody
+        - @storages.each do |storage|
+          %tr
+            %td= storage.store.try(:name)
+            %td= storage.name
+            %td.nowrap
+              = edit_button edit_storage_path(storage)
+              = show_button storage_path(storage)
+              = delete_button storage_path(storage)

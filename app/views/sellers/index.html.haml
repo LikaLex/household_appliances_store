@@ -11,15 +11,15 @@
     %table.table.table-striped.table-bordered
       %thead
         %tr
-          %th Name
           %th Store
+          %th Name
           %th
 
       %tbody
         - @sellers.each do |seller|
           %tr
-            %td= "#{seller.first_name}  #{seller.last_name}"
             %td= seller.store.try(:name)
+            %td= "#{seller.first_name}  #{seller.last_name}"
             %td.nowrap
               = edit_button edit_seller_path(seller)
               = show_button seller_path(seller)
