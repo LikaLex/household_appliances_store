@@ -1,0 +1,17 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Edit ', edit_buyer_path(@buyer), class: "btn btn-primary pull-right"
+
+
+  .col-md-12
+    %dl.dl-horizontal
+      %dt Name
+      %dd= "#{@buyer.first_name} #{@buyer.last_name}"
+      %dt Phone number
+      %dd= @buyer.phone
+      %dt Passport
+      %dd= "#{@buyer.passport_seria} #{@buyer.passport_number}"
+
+= link_to 'Back', :back, class: "btn btn-default "

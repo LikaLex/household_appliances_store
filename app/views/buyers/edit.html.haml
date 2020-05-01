@@ -1,0 +1,11 @@
+- title "Edit"
+
+.row
+  .col-md-12
+
+    %h3
+      = @title
+
+    = render 'form'
+    %br/
+    = link_to 'Back', buyers_path, class: 'btn btn-default'

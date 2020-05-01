@@ -1,0 +1,24 @@
+.row
+  .col-md-12
+
+    .action-bar
+      = link_to 'Add Buyer', new_buyer_path, class: "btn btn-default pull-right"
+
+    %h3.pull-left.text-primary Buyers
+
+.row
+  .col-md-12
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Name
+          %th
+
+      %tbody
+        - @buyers.each do |buyer|
+          %tr
+            %td= "#{buyer.first_name}  #{buyer.last_name}"
+            %td.nowrap
+              = edit_button edit_buyer_path(buyer)
+              = show_button buyer_path(buyer)
+              = delete_button buyer_path(buyer)

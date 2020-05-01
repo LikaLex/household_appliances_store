@@ -1,0 +1,8 @@
+= simple_form_for(@buyer) do |f|
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :passport_seria
+  = f.input :passport_number
+  = f.input :phone
+  %hr
+    = f.button :submit, class: 'btn btn-primary'
