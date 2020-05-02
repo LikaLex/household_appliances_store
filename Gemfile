@@ -20,7 +20,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 gem 'bootstrap-select-rails'
 
