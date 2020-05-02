@@ -1,7 +1,136 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts 'Creating manufacturers...'
+Manufacturer.create( name: "BACKER", place: 'Belarus', date_of_foundation: '2011-12-05')
+Manufacturer.create( name: "Carrier", place: 'USA', date_of_foundation: '1902-01-15')
+Manufacturer.create( name: "DE LUXE", place: 'Russia', date_of_foundation: '1946-07-03')
+Manufacturer.create( name: "ELECTRA", place: 'Israel', date_of_foundation: '1945-09-08')
+Manufacturer.create( name: "FOSTER", place: 'Italy', date_of_foundation: '1973-04-11')
+Manufacturer.create( name: "Halsen", place: 'Russia', date_of_foundation: '2013-10-05')
+Manufacturer.create( name: "JARDEKO", place: 'Russia', date_of_foundation: '2014-02-23')
+Manufacturer.create( name: "Kamille", place: 'China', date_of_foundation: '2008-01-08')
+Manufacturer.create( name: "LORE", place: 'Russia', date_of_foundation: '2011-02-05')
+Manufacturer.create( name: "Maestro", place: 'Ukraine', date_of_foundation: '2005-02-13')
+Manufacturer.create( name: "POLAR", place: 'Russia', date_of_foundation: '1993-06-12')
+Manufacturer.create( name: "Stomer", place: 'Russia', date_of_foundation: '2012-12-05')
+Manufacturer.create( name: "TERIM", place: 'Italy', date_of_foundation: '1962-11-17')
+Manufacturer.create( name: "UKINOX", place: 'Russia', date_of_foundation: '1999-12-05')
+Manufacturer.create( name: "VOLLE", place: 'Russia', date_of_foundation: '2014-11-13')
+
+puts 'Creating products...'
+Product.create(name: "Angel 10", kind: 'Iron', date_of_issue:'2020-02-11', price: 12, number:"ir3",
+               manufacturer_id:5, guarantee_period: 12, specific_characteristic: "Power", specific_characteristic_value: 20)
+Product.create(name: "Power 20", kind: "Television Set", date_of_issue: "2020-04-01", price: 42, number: "ts1",
+               manufacturer_id: 2, guarantee_period: 36, specific_characteristic: "Diagonal", specific_characteristic_value:15)
+Product.create(name: "Green 32", kind: "Vacuum Cleaner", date_of_issue: "2020-05-01", price: 72, number: "vc1",
+                manufacturer_id: 1, guarantee_period: 12, specific_characteristic: "Power", specific_characteristic_value: 100)
+Product.create(name: "Golden 3000", kind: "Iron", date_of_issue: "2020-02-01", price: 15, number: "ir1",
+               manufacturer_id: 2, guarantee_period: 12, specific_characteristic: "Power", specific_characteristic_value: 80)
+Product.create(name: "Combo 82", kind: "Television Set", date_of_issue: "2019-04-01", price: 45, number: "ts2",
+               manufacturer_id: 8, guarantee_period: 36, specific_characteristic: "Diagonal", specific_characteristic_value:16)
+Product.create(name: "Mambo 32", kind: "Vacuum Cleaner", date_of_issue: "2018-05-01", price: 62, number: "vc2",
+               manufacturer_id: 9, guarantee_period: 18, specific_characteristic: "Power", specific_characteristic_value: 120)
+Product.create( name: "Ida 13", kind: "Washer", date_of_issue: "2018-08-01", price: 35, number: "w1",
+                manufacturer_id: 4, guarantee_period: 6, specific_characteristic: "Size", specific_characteristic_value: 2)
+Product.create( name: "Rita 22", kind: "Washer", date_of_issue: "2019-03-12", price: 40, number: "w2",
+                manufacturer_id: 10, guarantee_period: 6, specific_characteristic: "Size", specific_characteristic_value: 4)
+Product.create(name: "Prime 100", kind: 'Iron', date_of_issue:'2020-03-12', price: 18, number:"i4",
+               manufacturer_id:7, guarantee_period: 12, specific_characteristic: "Power", specific_characteristic_value: 25)
+Product.create(name: "BIS 43", kind: "Television Set", date_of_issue: "2017-04-01", price: 35, number: "ts3",
+               manufacturer_id: 11, guarantee_period: 36, specific_characteristic: "Diagonal", specific_characteristic_value:12)
+
+puts 'Creating stores...'
+Store.create(name: "5th element", town: "Mogilev", street: "Lazarenko", house: "73B")
+Store.create(name: "21vek.by", town: "Minsk", street: "Trostenetskaya", house: "17")
+Store.create(name: "Power", town: "Minsk", street: "Red", house: "22")
+Store.create(name: "Viking", town: "Brest", street: "July 28th", house: "33B")
+Store.create(name: "6th element ", town: "Gomel", street: "October 75", house: "3B")
+Store.create(name: "Sunlight", town: "Minsk", street: "Red", house: "24")
+Store.create(name: "Angel", town: "Grodno", street: "Knorina", house: "15A")
+Store.create(name: "Tech vek", town: "Vitebsk", street: "Volgogradskaia", house: "7")
+Store.create(name: "Home", town: "Brest", street: "28th", house: "3")
+Store.create(name: "One", town: "Brest", street: "Vorovskogo", house: "25")
+
+puts 'Creating sellers...'
+Seller.create(first_name: "Melanie", last_name: "Stryder", employment_contract_number: 1, store_id: 1)
+Seller.create(first_name: "Persey", last_name: "Jackson", employment_contract_number: 2, store_id: 4)
+Seller.create(first_name: "Isla", last_name: "Fisher", employment_contract_number: 3, store_id: 3)
+Seller.create(first_name: "Diego", last_name: "Domínguez", employment_contract_number: 4, store_id: 4)
+Seller.create(first_name: "Facundo", last_name: "Gambande", employment_contract_number: 5, store_id: 2)
+Seller.create(first_name: "Mercedes", last_name: "Lambre", employment_contract_number: 6, store_id: 2)
+Seller.create(first_name: "Jorge", last_name: "Blanco", employment_contract_number: 7, store_id: 5)
+Seller.create(first_name: "Pablo", last_name: "Espinosa", employment_contract_number: 8, store_id: 8)
+Seller.create(first_name: "Xabiani", last_name: "Ponce de Leon", employment_contract_number: 9, store_id: 9)
+Seller.create(first_name: "Lodovica", last_name: "Comello", employment_contract_number: 10, store_id: 7)
+Seller.create(first_name: "Clara", last_name: "Alonso", employment_contract_number: 11, store_id: 7)
+Seller.create(first_name: "Alba", last_name: "Rico", employment_contract_number: 12, store_id: 6)
+Seller.create(first_name: "Nicolas", last_name: "Garnier", employment_contract_number: 13, store_id: 10)
+
+puts 'Creating storages...'
+Storage.create(number: "B21", name: "Blue Street", store_id: 1)
+Storage.create(number: "21R", name: "Red Club", store_id: 1)
+Storage.create(number: "Yellow5", name: "Yellow Stone", store_id: 4)
+Storage.create(number: "O45", name: "Orange flower", store_id: 3)
+Storage.create(number: "P23", name: "Pink D", store_id: 2)
+Storage.create(number: "L41", name: "Greene", store_id: 5)
+Storage.create(number: "R45", name: "Rome", store_id: 7)
+Storage.create(number: "Y15", name: "St. P", store_id: 9)
+Storage.create(number: "1O5", name: "Lower", store_id: 10)
+Storage.create(number: "J83", name: "Dug", store_id: 8)
+
+puts 'Creating commodity units...'
+CommodityUnit.create(count: 10, storage_id: 1, product_id: 2)
+CommodityUnit.create(count: 10, storage_id: 3, product_id: 7)
+CommodityUnit.create(count: 10, storage_id: 2, product_id: 8)
+CommodityUnit.create(count: 10, storage_id: 4, product_id: 9)
+CommodityUnit.create(count: 10, storage_id: 6, product_id: 3)
+CommodityUnit.create(count: 10, storage_id: 5, product_id: 2)
+CommodityUnit.create(count: 10, storage_id: 7, product_id: 9)
+CommodityUnit.create(count: 10, storage_id: 9, product_id: 8)
+CommodityUnit.create(count: 10, storage_id: 10, product_id: 7)
+CommodityUnit.create(count: 10, storage_id: 8, product_id: 6)
+CommodityUnit.create(count: 10, storage_id: 5, product_id: 5)
+CommodityUnit.create(count: 10, storage_id: 4, product_id: 4)
+CommodityUnit.create(count: 10, storage_id: 3, product_id: 3)
+CommodityUnit.create(count: 10, storage_id: 3, product_id: 2)
+CommodityUnit.create(count: 10, storage_id: 1, product_id: 1)
+
+puts 'Creating buyers...'
+Buyer.create(first_name: "Anabet", last_name: "Chaiz", passport_seria: "MP", passport_number: 374736, phone: "+375332435323")
+Buyer.create(first_name: "Dima", last_name: "Bickbaev", passport_seria: "AB", passport_number: 8272836, phone: "+375257365243")
+Buyer.create(first_name: "Liv", last_name: "Flower", passport_seria: "KN", passport_number: 3873732, phone: "+375447654321")
+Buyer.create(first_name: "Amanda", last_name: "Bynes", passport_seria: "MP", passport_number: 3747366, phone: "+375337058475")
+Buyer.create(first_name: "Oliver", last_name: "James", passport_seria: "MP", passport_number: 3458765, phone: "+375335263748")
+Buyer.create(first_name: "James", last_name: "Marsden", passport_seria: "AB", passport_number: 1987645, phone: "+375330495867")
+Buyer.create(first_name: "Amy", last_name: "Adams", passport_seria: "KN", passport_number: 4068765, phone: "+375331275465")
+Buyer.create(first_name: "Artyom", last_name: "Krylov", passport_seria: "KN", passport_number: 2756435, phone: "+375334545433")
+Buyer.create(first_name: "Kristina", last_name: "Brodskaya", passport_seria: "AB", passport_number: 1947584, phone: "+375339687564")
+Buyer.create(first_name: "Igor", last_name: "Lantratov", passport_seria: "MP", passport_number: 2746576, phone: "+375253574657")
+Buyer.create(first_name: "Natalya", last_name: "Bardo", passport_seria: "AB", passport_number:5687465, phone: "+375252867543")
+Buyer.create(first_name: "Tatyana", last_name: "Tatyana", passport_seria: "MP", passport_number: 2948576, phone: "+375448574635")
+Buyer.create(first_name: "Milos", last_name: "Bikovich", passport_seria: "MP", passport_number: 8746576, phone: "+375332445623")
+
+puts 'Creating purchases...'
+Purchase.create(store_id: 4, product_id: 1, seller_id: 1, buyer_id: 2)
+Purchase.create(store_id: 2, product_id: 1, seller_id: 3, buyer_id: 7)
+Purchase.create(store_id: 1, product_id: 2, seller_id: 7, buyer_id: 3)
+Purchase.create(store_id: 5, product_id: 2, seller_id: 4, buyer_id: 2)
+Purchase.create(store_id: 6, product_id: 4, seller_id: 7, buyer_id: 4)
+Purchase.create(store_id: 7, product_id: 5, seller_id: 6, buyer_id: 6)
+Purchase.create(store_id: 5, product_id: 6, seller_id: 5, buyer_id: 3)
+Purchase.create(store_id: 8, product_id: 7, seller_id: 1, buyer_id: 8)
+Purchase.create(store_id: 9, product_id: 8, seller_id: 1, buyer_id: 7)
+Purchase.create(store_id: 10, product_id: 7, seller_id: 2, buyer_id: 5)
+Purchase.create(store_id: 3, product_id: 9, seller_id: 3, buyer_id: 9)
+Purchase.create(store_id: 3, product_id: 10, seller_id: 4, buyer_id:10)
+Purchase.create(store_id: 4, product_id: 7, seller_id: 5, buyer_id: 11)
+Purchase.create(store_id: 5, product_id: 6, seller_id: 10, buyer_id: 12)
+Purchase.create(store_id: 6, product_id: 7, seller_id: 9, buyer_id: 13)
+Purchase.create(store_id: 1, product_id: 3, seller_id: 7, buyer_id: 9)
+Purchase.create(store_id: 1, product_id: 5, seller_id: 8, buyer_id: 8)
+Purchase.create(store_id: 2, product_id: 4, seller_id: 6, buyer_id: 7)
+Purchase.create(store_id: 3, product_id: 3, seller_id: 7, buyer_id: 6)
+Purchase.create(store_id: 5, product_id: 2, seller_id: 5, buyer_id: 5)
+Purchase.create(store_id: 4, product_id: 3, seller_id: 3, buyer_id: 4)
+Purchase.create(store_id: 6, product_id: 3, seller_id: 4, buyer_id: 2)
+Purchase.create(store_id: 7, product_id: 3, seller_id: 2, buyer_id: 3)
+Purchase.create(store_id: 9, product_id: 7, seller_id: 1, buyer_id: 1)
+

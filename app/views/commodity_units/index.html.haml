@@ -19,8 +19,8 @@
       %tbody
         - @commodity_units.each do |commodity_unit|
           %tr
-            %td= commodity_unit.product.try(:name)
-            %td= commodity_unit.storage.try(:name)
+            %td= link_to commodity_unit.product.try(:name), commodity_unit.product
+            %td= link_to commodity_unit.storage.try(:name), commodity_unit.storage
             %td= commodity_unit.count
 
             %td.nowrap

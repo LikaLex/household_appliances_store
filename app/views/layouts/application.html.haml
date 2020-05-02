@@ -10,12 +10,13 @@
 %body
   %nav.navbar.navbar-default
     .container
-      .navbar-brand= link_to "Manufacturers", root_path
+      .navbar-brand= link_to "Household appliances store", root_path
 
       %ul.nav.navbar-nav.navbar-right
+        %li= link_to "Manufacturers", manufacturers_path
         %li= link_to "Products", products_path
         %li= link_to "Stores", stores_path
-        %li= link_to "Seller", sellers_path
+        %li= link_to "Sellers", sellers_path
         %li= link_to "Storages", storages_path
         %li= link_to "Commodity Units", commodity_units_path
         %li= link_to "Buyers", buyers_path

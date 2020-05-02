@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :buyers
   resources :purchases
 
-  root "manufacturers#index"
+  root "home#index"
 end

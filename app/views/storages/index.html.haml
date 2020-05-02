@@ -18,7 +18,7 @@
       %tbody
         - @storages.each do |storage|
           %tr
-            %td= storage.store.try(:name)
+            %td= link_to storage.store.try(:name), storage.store
             %td= storage.name
             %td.nowrap
               = edit_button edit_storage_path(storage)

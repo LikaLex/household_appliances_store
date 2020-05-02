@@ -18,7 +18,7 @@
       %tbody
         - @sellers.each do |seller|
           %tr
-            %td= seller.store.try(:name)
+            %td= link_to seller.store.try(:name), seller.store
             %td= "#{seller.first_name}  #{seller.last_name}"
             %td.nowrap
               = edit_button edit_seller_path(seller)

@@ -25,7 +25,7 @@
       %tbody
         - @products.each do |product|
           %tr
-            %td= product.manufacturer.try(:name)
+            %td= link_to product.manufacturer.try(:name), product.manufacturer
             %td= product.name
             %td= product.kind
             %td= product.date_of_issue
