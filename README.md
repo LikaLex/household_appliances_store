@@ -1,24 +1,11 @@
-# README
+#  Household appliances store
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+* Ruby version: 2.6.3 
 
-* Ruby version
+* Database creation: rake db: create, rake db:migrate
 
-* System dependencies
+* Database initialization: rake db:seed
 
-* Configuration
+* Deployment instructions: rvm install ruby, bundle, create database commands 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
