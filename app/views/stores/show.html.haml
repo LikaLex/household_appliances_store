@@ -16,4 +16,39 @@
       %dt House
       %dd= @store.house
 
+
+%h4.pull-left.text-primary Sellers
+
+.row
+  .col-md-12
+    %table.table.table-striped.table-bordered
+      %thead
+        %t
+          %th Name
+          %th
+
+      %tbody
+        - @store.sellers.each do |seller|
+          %tr
+            %td= "#{seller.first_name}  #{seller.last_name}"
+            %td.nowrap
+              = show_button seller_path(seller)
+
+%h4.pull-left.text-primary Purchases
+
+.row
+  .col-md-12
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Number
+          %th
+
+      %tbody
+        - @store.purchases.each do |purchase|
+          %tr
+            %td= purchase.id
+            %td.nowrap
+              = show_button purchase_path(purchase)
+
 = link_to 'Back', :back, class: "btn btn-default "
